@@ -68,49 +68,53 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 flex flex-col items-center py-10">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 flex flex-col items-center px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
       {/* Header Section */}
       <Header title="Code Processing Studio" />
 
       {/* Navigation */}
       <motion.div
-        className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 mb-8 w-full max-w-6xl px-6"
+        className="w-full max-w-7xl px-2 sm:px-4 lg:px-6 mb-6 sm:mb-8"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
       >
-        {features.map((feature) => (
-          <FeatureButton
-            key={feature.name}
-            feature={feature}
-            isActive={activeFeature === feature.name}
-            onClick={() => {
-              setLoading(true);
-              setTimeout(() => {
-                setActiveFeature(feature.name);
-                setLoading(false);
-              }, 500);
-            }}
-          />
-        ))}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 md:gap-6">
+          {features.map((feature) => (
+            <FeatureButton
+              key={feature.name}
+              feature={feature}
+              isActive={activeFeature === feature.name}
+              onClick={() => {
+                setLoading(true);
+                setTimeout(() => {
+                  setActiveFeature(feature.name);
+                  setLoading(false);
+                }, 500);
+              }}
+            />
+          ))}
+        </div>
       </motion.div>
 
       {/* Main Content Section */}
       <motion.div
-        className="card bg-white rounded-lg shadow-md w-4/5 mx-auto p-8 border border-blue-200"
+        className="w-full max-w-7xl px-2 sm:px-4 lg:px-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <MainContent
-          activeFeature={activeFeature}
-          loading={loading}
-          components={components}
-        />
+        <div className="card bg-white rounded-lg shadow-md p-4 sm:p-6 lg:p-8 border border-blue-200">
+          <MainContent
+            activeFeature={activeFeature}
+            loading={loading}
+            components={components}
+          />
+        </div>
       </motion.div>
 
       {/* Footer */}
-      <footer className="mt-10 text-gray-600">
+      <footer className="mt-6 sm:mt-10 text-gray-600 text-sm sm:text-base text-center px-4">
         <p>
           © {new Date().getFullYear()} Code Processing Studio. All rights
           reserved.

@@ -9,23 +9,23 @@ function InputForm({ onSubmit }) {
   };
 
   return (
-    <div className="flex items-center justify-center bg-gradient-to-br from-gray-100 to-blue-50">
+    <div className="w-full">
       <form
-        className="w-4/5 bg-white shadow-lg rounded-xl p-6 border border-gray-200"
+        className="w-full bg-white rounded-lg shadow-sm p-3 sm:p-4 md:p-6"
         onSubmit={handleSubmit}
       >
         {/* Header */}
-        <h2 className="text-2xl font-bold text-blue-600 mb-4 text-center">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-600 mb-2 sm:mb-3 md:mb-4 text-center">
           Enhance Your Code: Optimize and Clean Up with Ease
         </h2>
-        <p className="text-sm text-gray-500 text-center mb-6">
-          Enter your C code below, and we’ll process it for you.
+        <p className="text-xs sm:text-sm text-gray-500 text-center mb-4 sm:mb-6">
+          Enter your C code below, and we'll process it for you.
         </p>
 
         {/* Textarea Input */}
-        <div className="form-control mb-4">
+        <div className="mb-3 sm:mb-4">
           <textarea
-            className="textarea textarea-bordered w-full h-40 p-4 text-sm font-mono bg-gray-50"
+            className="w-full h-32 sm:h-40 md:h-48 p-3 sm:p-4 text-xs sm:text-sm md:text-base font-mono bg-gray-50 rounded-md border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors resize-none"
             placeholder="Paste your C code here..."
             value={code}
             onChange={(e) => setCode(e.target.value)}
@@ -36,7 +36,7 @@ function InputForm({ onSubmit }) {
         <div className="text-center">
           <button
             type="submit"
-            className="btn btn-primary btn-wide bg-gradient-to-r from-blue-500 to-blue-700 text-white font-medium hover:from-blue-600 hover:to-blue-800 transition-all"
+            className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm sm:text-base font-medium rounded-md hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 ease-in-out"
           >
             Process Code
           </button>

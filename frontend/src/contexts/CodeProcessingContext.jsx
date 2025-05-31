@@ -6,7 +6,7 @@ export const CodeProcessingProvider = ({ children }) => {
   const [tokens, setTokens] = useState([]);
 
   const fetchProcessedCode = async (code) => {
-    const response = await fetch("http://localhost:5000/process", {
+    const response = await fetch("http://localhost:5000/api/process", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ code }),
@@ -16,7 +16,7 @@ export const CodeProcessingProvider = ({ children }) => {
   };
 
   const fetchTokens = async (code) => {
-    const response = await fetch("http://localhost:5000/tokenize", {
+    const response = await fetch("http://localhost:5000/api/tokenize", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ code }),
@@ -26,7 +26,7 @@ export const CodeProcessingProvider = ({ children }) => {
   };
 
   const fetchOptimizedCode = async (code) => {
-    const response = await fetch("http://localhost:5000/optimize", {
+    const response = await fetch("http://localhost:5000/api/optimize", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ code }),
@@ -36,7 +36,7 @@ export const CodeProcessingProvider = ({ children }) => {
   };
 
   const fetchAST = async (code) => {
-    const response = await fetch("http://localhost:5000/generate-ast", {
+    const response = await fetch("http://localhost:5000/api/generate-ast", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ code }),
@@ -46,7 +46,7 @@ export const CodeProcessingProvider = ({ children }) => {
   };
 
   const fetchIR = async (code) => {
-    const response = await fetch("http://localhost:5000/generate-ir", {
+    const response = await fetch("http://localhost:5000/api/generate-ir", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ code }),
@@ -57,7 +57,7 @@ export const CodeProcessingProvider = ({ children }) => {
 
   const fetchSymbolTable = async (code) => {
     const response = await fetch(
-      "http://localhost:5000/generate-symbol-table",
+      "http://localhost:5000/api/generate-symbol-table",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -69,7 +69,7 @@ export const CodeProcessingProvider = ({ children }) => {
   };
 
   const fetchSyntaxValidation = async (code) => {
-    const response = await fetch("http://localhost:5000/validate-syntax", {
+    const response = await fetch("http://localhost:5000/api/validate-syntax", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ code }),
