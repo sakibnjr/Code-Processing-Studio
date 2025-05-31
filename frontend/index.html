@@ -2,17 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/code-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <meta name="description" content="Code Processing Studio - A modern web application for processing and analyzing C code" />
+    <meta name="keywords" content="code processing, C programming, code analysis, code optimization, AST visualization" />
+    <meta name="author" content="Sakib NJR" />
+    <meta name="theme-color" content="#3B82F6" />
+    
+    <title>Code Processing Studio</title>
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Code Processing Studio" />
+    <meta property="og:description" content="A modern web application for processing and analyzing C code" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Tailwind CSS and DaisyUI -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      code, pre {
+        font-family: 'Fira Code', monospace;
+      }
+    </style>
   </head>
-  <body>
+  <body class="antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
